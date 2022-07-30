@@ -1,0 +1,18 @@
+<h4>Informe o Id do carrinho que deseja visualizar:</h4>
+<form (ngSubmit)="viewCart(cart.id)">
+  <label>Id</label>
+  <input type="number" name="id" [(ngModel)]="cart.id">
+  <input type="submit" value="Enviar" class="botao_enviar">
+</form>
+
+<table>
+  <tr>
+    <td>Id</td>
+    <td>Total</td>
+  </tr>
+
+  <tr *ngFor="let cart of carts">
+    <td>{{cart.id}}</td>
+    <td>{{cart.total}}</td>
+  </tr>
+</table>

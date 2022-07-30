@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Produto</th>
+    <th>Preço</th>
+    <th>Ação</th>
+  </tr>
+
+  <tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td><button (click)="editProduct(product.id)">Editar</button></td>
+  </tr>
+</table>
+
+<div>
+  <form (ngSubmit)="createProduct()">
+    <label>Nome do produto</label>
+    <input type="text" name="name" [(ngModel)]="product.name">
+
+    <label>Preço</label>
+    <input type="number" name="price" [(ngModel)]="product.price">
+
+    <input type="submit" value="Enviar" class="botao_enviar">
+  </form>
+</div>
